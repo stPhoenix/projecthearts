@@ -64,14 +64,16 @@ const deck = [
 class App extends Component {
   constructor(props){
       super(props);
-      this.state = {hand: [], hole: [], temp_deck: [], message: 'Press start'};
+      this.state = {hand: [], hole: [], temp_deck: [], message: 'Press start', pot: 10, position: ["EP", "MP", "LP", "BLINDS"]};
       this.start = this.start.bind(this);
       this.more = this.more.bind(this);
   }
   start () {
       const t_deck = [...deck.sort((a, b) => {return(0.5 - Math.random())})];
+      const pos = [...this.state.position.sort((a, b) => {return(0.5 - Math.random())})];
       this.setState({hand: [t_deck.shift(), t_deck.shift(), t_deck.shift()], hole: [t_deck.shift(), t_deck.shift()]});
-      this.setState({temp_deck: [...t_deck], message: 'Press more for adding card'});
+      this.setState({temp_deck: [...t_deck], message: 'Press more for adding card', position: [...pos],
+                     pot: Math.floor(Math.random() * 1000)});
   };
   more () {
       if (this.state.hand.length < 5) {
@@ -99,10 +101,14 @@ class App extends Component {
         <section className="col-12">    
             <hr />
         </section>
-        <section className="col-12 d-flex justify-content-center">
-            <ul className="list-unstyled d-flex flex-row justify-content-center">
+        <section className="col-12 d-flex flex-column flex-md-row">
+            <ul className="list-unstyled d-flex flex-row justify-content-center mx-auto">
                 {this.state.hole.map((card, iterator) => {return(<li className="" key={"cardhole"+iterator}><img className="img-fluid mx-2" style={{width:"10rem"}} src={card} alt="" /></li>)})}
             </ul>
+            <div className="d-flex flex-row flex-md-column text-white font-weight-bold align-self-center">
+                <h3>POT: {this.state.pot}$</h3>
+                <h4 className="align-self-center">POSITION: {this.state.position[0]}</h4>
+            </div>
         </section>
         <section className="col-12 d-flex fixed-bottom mb-3">
             <i className="material-icons text-white md-48 " id="UncontrolledTooltipInfo">info
