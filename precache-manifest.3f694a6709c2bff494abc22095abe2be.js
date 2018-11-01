@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/projecthearts/static/media/8C.a46a54d9.png"
   },
   {
-    "revision": "76c7ece03cf5677db5e3",
+    "revision": "07ddc4c894e1128a26bf",
     "url": "/projecthearts/static/css/main.6d636414.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/projecthearts/static/media/bg.d05b85f2.jpg"
   },
   {
-    "revision": "024100091ddb6e2d7127",
-    "url": "/projecthearts/static/js/1.02410009.chunk.js"
+    "revision": "68f5548b7d3d582deba5",
+    "url": "/projecthearts/static/js/1.68f5548b.chunk.js"
   },
   {
     "revision": "2cfa4d1504299ceb7296",
@@ -116,8 +116,8 @@ self.__precacheManifest = [
     "url": "/projecthearts/static/media/7S.82d62864.png"
   },
   {
-    "revision": "76c7ece03cf5677db5e3",
-    "url": "/projecthearts/static/js/main.76c7ece0.chunk.js"
+    "revision": "07ddc4c894e1128a26bf",
+    "url": "/projecthearts/static/js/main.07ddc4c8.chunk.js"
   },
   {
     "revision": "fcafeaf2d610109aa1916208080ab711",
@@ -228,11 +228,11 @@ self.__precacheManifest = [
     "url": "/projecthearts/static/media/QS.9026849b.png"
   },
   {
-    "revision": "024100091ddb6e2d7127",
+    "revision": "68f5548b7d3d582deba5",
     "url": "/projecthearts/static/css/1.68ef65f0.chunk.css"
   },
   {
-    "revision": "9d9b9c280bb44c13ace27b8dfa9dee13",
+    "revision": "79d6823421824cf6c56974c14cd9e7dc",
     "url": "/projecthearts/index.html"
   }
 ];
