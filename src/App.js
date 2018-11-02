@@ -64,16 +64,19 @@ const deck = [
 class App extends Component {
   constructor(props){
       super(props);
-      this.state = {hand: [], hole: [], temp_deck: [], message: 'Press start', pot: 10, position: ["EP", "MP", "LP", "BLINDS"]};
+      this.state = {hand: [], hole: [], temp_deck: [], message: 'Press start', pot: 10, call_m: 1,
+                    position: ["EP", "MP", "LP", "BLINDS"]};
       this.start = this.start.bind(this);
       this.more = this.more.bind(this);
   }
   start () {
       const t_deck = [...deck.sort((a, b) => {return(0.5 - Math.random())})];
       const pos = [...this.state.position.sort((a, b) => {return(0.5 - Math.random())})];
+      const pot = Math.floor(Math.random() * 1000);
+      const call_m = Math.floor(Math.random() * pot);
       this.setState({hand: [t_deck.shift(), t_deck.shift(), t_deck.shift()], hole: [t_deck.shift(), t_deck.shift()]});
       this.setState({temp_deck: [...t_deck], message: 'Press more for adding card', position: [...pos],
-                     pot: Math.floor(Math.random() * 1000)});
+                     pot, call_m });
   };
   more () {
       if (this.state.hand.length < 5) {
@@ -108,6 +111,7 @@ class App extends Component {
             <div className="d-flex flex-row flex-md-column text-white font-weight-bold align-self-center">
                 <h3>POT: {this.state.pot}$</h3>
                 <h4 className="align-self-center">POSITION: {this.state.position[0]}</h4>
+                <h4 className="align-self-start">CALL: {this.state.call_m}$</h4>
             </div>
         </section>
         <section className="col-12 d-flex fixed-bottom mb-3">
